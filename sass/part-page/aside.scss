@@ -1,0 +1,149 @@
+//import mixin
+@import "../common/mixin.scss";
+
+//import responsive
+@import "../part-page/responsive.scss";
+
+.aside {
+    float: left;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 1px 1px 10px 3px $border-color;
+    width: 15%;
+
+    @include responsive {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 80px;
+    }
+
+    .img-aside {
+        @include display-flex(flex, row, center, center, 0);
+
+        img {
+            max-width: 80%;
+        }
+
+        @include responsive {
+            display: none;
+        }
+    }
+
+    .title-aside {
+        background: $gradient-color;
+        height: 80px;
+        @include display-flex(flex, row, center, center, 0);
+
+        h2 {
+            color: #fff;
+            font-size: 2em;
+
+            @include responsiveTwo {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    @include responsive {
+        #navbar.active #hamburguer {
+            border-top-color: transparent;
+
+        }
+
+    }
+
+    @include responsive {
+        #navbar.active #hamburguer::before {
+            transform: rotate(135deg);
+        }
+
+
+        #navbar.active #hamburguer::after {
+            transform: rotate(-135deg);
+            top: -7px;
+        }
+    }
+
+    #btn-mobile {
+        display: none;
+
+        @include responsive {
+            display: flex;
+            gap: .5rem;
+            position: absolute;
+            top: 27px;
+            left: 15px;
+            padding: .5rem 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+
+            #hamburguer {
+                display: block;
+                border-top: 2px solid;
+                width: 20px;
+                color: #fff;
+            }
+
+            #hamburguer::after,
+            #hamburguer::before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 2px;
+                background-color: currentColor;
+                margin-top: 5px;
+                transition: .3s;
+                position: relative;
+            }
+
+        }
+    }
+
+    @include responsive {
+        #navbar.active #menu {
+            height: calc(100vh - 80px);
+            visibility: visible;
+            overflow-y: auto;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+
+        @include responsive {
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: 80px;
+            background: #fff;
+            height: 0;
+            z-index: 0;
+            transition: .6s;
+            visibility: hidden;
+            overflow-y: hidden;
+        }
+
+        li {
+            border-bottom: 3px solid $border-color;
+            padding-bottom: 20px;
+            height: 40px;
+
+            &:hover {
+                background: $primary-color;
+                border-left: 5px solid rgba(238, 122, 58, 1);
+            }
+
+            a {
+                margin-left: 20px;
+                padding-top: 8px;
+                @include display-flex(flex, row, center, none, 0);
+                font-size: 1em;
+            }
+        }
+    }
+
+
+
+}

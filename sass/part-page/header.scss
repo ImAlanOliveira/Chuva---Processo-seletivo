@@ -1,0 +1,66 @@
+@import "../common/mixin.scss";
+@import "../part-page/responsive.scss";
+
+.header {
+    background-color: $primary-color;
+    @include display-flex(flex, row, center, space-around, 0);
+    margin-left: 15vw;
+    
+    @include responsive{
+        display:none;
+    }
+
+    .content-header {
+        color: $tertiary-color;
+
+        h2 {
+            font-weight: 400;
+
+            @include responsiveTwo{
+                font-size:0.8em;
+            }
+        }
+    }
+
+    .header-img-language {
+        @include display-flex(flex, row, center, none, 20px);
+
+        .languageButton {
+            button {
+                @include display-flex(flex, row, center, center, 5px);
+                width: 100px;
+                height: 35px;
+                background-color: transparent;
+                border: 1px solid #acaaaa;
+                border-radius: 5px;
+                font-weight: 300;
+                color: $text-color;
+
+                @include responsiveTwo{
+                    width:80px;
+                    font-size:0.6em;
+                }
+            }
+        }
+
+        .login {
+            @include display-flex(flex, row, center, none, 8px);
+            color: $text-color;
+            font-weight: 300;
+
+            @include responsiveTwo{
+                font-size:0.7em;
+            }
+
+            .pWelcome {
+                text-align: right;
+            }
+
+            .imgLogin {
+                img {
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+}

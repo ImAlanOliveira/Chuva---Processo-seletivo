@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+    a {
+        text-decoration: none;
+        color: $text-color;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    textarea {
+        resize: none;
+    }
+}

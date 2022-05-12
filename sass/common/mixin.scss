@@ -1,0 +1,15 @@
+@mixin title-config($background-color, $padding, $font-size, $color, $font-weight) {
+    background-color: $background-color;
+    padding: $padding;
+    font-size: $font-size;
+    color: $color;
+    font-weight: $font-weight;
+}
+
+@mixin display-flex($display, $flex-direction, $align-items, $justify-content, $gap) {
+    display: $display;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}

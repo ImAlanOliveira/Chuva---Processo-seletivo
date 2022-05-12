@@ -1,0 +1,58 @@
+@import "../common/mixin.scss";
+
+footer {
+    border-top: 1.5px solid $border-color;
+    padding-top: 15px;
+    margin-left: 18.7vw;
+    margin-top: 10vh;
+    display: flex;
+    align-items:center;
+    height: 25vh;
+    width: 75%;
+
+    @include ultrawideResponsive{
+        @include display-flex(flex, row, center, center, 40px);
+    }
+
+    @include responsive{
+        margin-left:12vw;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 10vh;
+    }
+
+    .img-footer {
+        @include display-flex(flex, column, center, none, 0);
+
+        button {
+            width: 90%;
+            height: 35px;
+            border: none;
+            background-color: rgba(143, 39, 143, 0.875);
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(116, 30, 116, 0.875);
+            }
+        }
+    }
+
+    .text {
+        .t1 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #323232;
+            text-align: justify;
+        }
+
+        .negrito {
+            font-weight: bold;
+        }
+    }
+
+}

@@ -1,0 +1,23 @@
+//colors
+@import "./variables/colors/colors.scss";
+
+//font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+//reset
+@import "./common/reset.scss";
+
+//header
+@import "./part-page/header.scss";
+
+//aside
+@import "./part-page/aside.scss";
+
+//main
+@import "./part-page/main.scss";
+
+//footer
+@import "./part-page/footer.scss";
+
+//responsive
+@import "./part-page/responsive.scss";

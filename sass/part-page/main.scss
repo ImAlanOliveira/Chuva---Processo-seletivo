@@ -1,0 +1,473 @@
+@import "../common/mixin.scss";
+@import "../part-page/responsive.scss";
+
+.main {
+    margin-left: 18.7vw;
+    margin-top: 3vh;
+
+    @include responsive {
+        margin-top: 120px;
+        margin-left: 12vw;
+    }
+
+    .main-content {
+        display: flex;
+
+        @include ultrawideResponsive {
+            @include display-flex(flex, row, center, center, 8vw);
+        }
+
+        @include responsiveThree {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .video {
+            h3 {
+                color: $title-color;
+                max-width: 85%;
+                margin-bottom: 2vh;
+                font-size: 1.6em;
+
+                @include responsive {
+                    font-size: 1em;
+                    text-align: center;
+                }
+            }
+
+            img {
+                width: 85%;
+            }
+        }
+
+    }
+
+    .main-second-content {
+        margin-left: -7vw;
+
+        @include responsive {
+            margin-left: -12vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buttons-main {
+            margin-left: 60px;
+
+            @include responsive {
+                margin-left: 0;
+
+
+            }
+
+            button {
+                border: none;
+                background-color: none;
+                cursor: pointer;
+
+            }
+        }
+
+        .span-main {
+            margin: 1.5vh 0 1.5vh 50px;
+            color: $title-color;
+            font-weight: 500;
+
+            @include responsive {
+                margin: 1.5vh 0;
+                text-align: center;
+            }
+
+        }
+
+        .details {
+            border: 2px solid $border-color;
+            border-radius: 5px;
+            width: 80%;
+
+            .title-details {
+                @include title-config($primary-color, 15px, 1.1em, $text-color, 100);
+            }
+
+            .content-details {
+                padding: 15px;
+                max-height: 60vh;
+                overflow: auto;
+                max-width: 30vw;
+
+                @include responsive {
+                    max-width: 100vw;
+                }
+
+                li,
+                p {
+                    font-weight: 300;
+                }
+
+                .negrito {
+                    font-weight: bold;
+                }
+
+                .info {
+                    color: $text-color;
+                    padding-bottom: 20px;
+                }
+
+                .authors {
+                    padding-bottom: 20px;
+                }
+
+                .university {
+                    color: #ada0a0;
+                }
+
+                .lorem {
+                    padding-top: 30px;
+                    max-width: 400px;
+                    color: #ada0a0;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+
+    .resume,
+    .discussion {
+        width: 95%;
+        margin-top: 5vh;
+        border: 2px solid $border-color;
+        border-radius: 5px;
+
+        @include responsive {
+            width: 100%;
+            margin-left: -6vw;
+        }
+
+        .title-resume,
+        .title-discussion {
+            background-color: $primary-color;
+            padding: 20px;
+            color: $text-color;
+            border-bottom: 2px solid $border-color;
+        }
+
+        .text-resume {
+            padding: 20px;
+            color: $text-color;
+            font-weight: 300;
+            font-size: 0.9em;
+            text-align: justify;
+
+            #mais {
+                display: none;
+            }
+
+            #btnLeiaMais {
+                background-color: transparent;
+                border: none;
+                color: $title-color;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .discussion {
+
+        .title-discussion {
+            margin-bottom: 40px;
+        }
+
+        .topic-discussion {
+            padding-bottom: 20px;
+
+            @include responsive {
+                font-size: .8em;
+            }
+        }
+
+        .questions {
+            padding: 20px;
+        }
+
+        .topic-discussion {
+            @include display-flex(flex, column, center, none, 30px);
+
+            .title-topic-discussion {
+                color: $title-color;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+
+            .img-discussion {
+                display: flex;
+                gap: 50px;
+            }
+
+            p {
+                text-align: center;
+            }
+
+            .button {
+                button {
+                    @include display-flex(flex, row, center, center, 0);
+                    position: relative;
+                    gap: 5px;
+                    width: 120px;
+                    height: 35px;
+                    background: $gradient-color;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: 500;
+                    font-size: 0.9em;
+
+                    img {
+                        width: 17px;
+                    }
+
+                }
+
+                button::before,
+                button::after {
+                    position: absolute;
+                    content: '';
+                    height: 2px;
+                    width: 415%;
+                    bottom: 50%;
+                    right: 100%;
+                    background-color: $border-color;
+
+                    @include especifyResponsive {
+                        width: 270%;
+                    }
+
+
+                    @include responsive {
+                        width: 100%;
+                    }
+                }
+
+                button::after {
+                    left: 100%;
+                }
+            }
+        }
+
+        .questions {
+            @include display-flex(flex, column, none, none, 20px);
+
+            .question1,
+            .question2 {
+                border: 1px solid $border-color;
+                padding: 20px;
+                box-shadow: 0px 0px 5px 1px #d5d3d3;
+
+                h4 {
+                    color: $title-color;
+                    margin-bottom: 2px;
+                }
+
+                .author-question {
+                    margin-bottom: 15px;
+
+                    span {
+                        font-size: 0.8em;
+                        color: #323232;
+
+                    }
+                }
+
+                p {
+                    color: #4D4D4D;
+                    font-weight: 300;
+                }
+
+                .img-likes {
+                    margin-top: 15px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+                    span {
+                        color: #757575;
+                        font-size: 0.8em;
+                    }
+                }
+
+            }
+
+        }
+
+        #userQuestion.active {
+           display:inline;
+        }
+
+        #userQuestion.disabled{
+            display:none;
+        }
+
+        .user-question {
+            display: none;
+
+
+
+            .title-user {
+                @include display-flex(flex, column, center, none, none);
+
+                @include responsive {
+                    text-align: center;
+                    font-size: .8em;
+                    margin-bottom: 3vh;
+                }
+
+                span {
+                    color: #5C5C5C;
+                    font-weight: 300;
+                }
+            }
+
+            .form {
+                @include display-flex(flex, column, none, none, none);
+                margin-left: 5%;
+
+
+
+                label {
+                    color: $title-color;
+                    font-weight: bold;
+                    margin-bottom: 4px;
+                }
+
+                input,
+                textarea {
+                    width: 95%;
+                }
+
+                input {
+                    height: 40px;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                }
+
+                textarea {
+                    height: 100px;
+                    padding: 5px;
+
+                }
+
+                .btns {
+                    width: 95%;
+                    @include display-flex(flex, row, none, space-between, none);
+
+                    background-color: #EAF1F2;
+                    border: 1px solid #a5a5a5;
+                    border-top: none;
+
+                    .style {
+                        display: flex;
+                        gap: 30px;
+                        padding: 5px 30px;
+
+                        .style-btn {
+                            border: none;
+                            background-color: transparent;
+                            cursor: pointer;
+                        }
+                    }
+
+                    #btnForm {
+                        padding: 0;
+                        width: 200px;
+                        border: none;
+                        background: $gradient-color;
+                        color: #fff;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: linear-gradient(rgb(243, 159, 56) 5%, rgb(214, 102, 42) 100%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .message {
+            @include display-flex(flex, column, center, none, 20px);
+            display: none;
+
+
+            h3 {
+                color: $title-color;
+
+                @include responsive {
+                    font-size: 1em;
+                }
+            }
+
+            span {
+                color: #5C5C5C;
+                font-weight: 300;
+
+                @include responsive {
+                    text-align: center;
+                    font-size: .8em;
+                }
+            }
+
+            a {
+                color: $title-color;
+                text-decoration: underline;
+                margin-bottom: 40px;
+            }
+
+            button {
+                position: relative;
+                width: 250px;
+                height: 30px;
+                color: #fff;
+                background: $gradient-color;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button::before,
+            button::after {
+                position: absolute;
+                content: '';
+                height: 3px;
+                width: 180%;
+                bottom: 50%;
+                right: 100%;
+                background-color: $border-color;
+
+                @include especifyResponsive {
+                    width: 100%;
+                }
+
+                @include responsive {
+                    width: 35%;
+                }
+            }
+
+            button::after {
+                left: 100%;
+            }
+        }
+    }
+
+
+}
+
+.ativo {
+    display: inline !important;
+}
+
+.desativado {
+    display: none !important;
+}
